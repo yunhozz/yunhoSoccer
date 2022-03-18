@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>sign up</title>
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<h1>Sign Up</h1> <hr>
+
+<form th:action="@{/member/new}" th:object="${memberDto}" method="POST">
+    ID : <input th:field="*{userId}" type="text" name="ID"> <br>
+    password : <input th:field="*{userPw}" type="password" name="password"> <br>
+    <input th:field="*{auth}" value="ROLE_ADMIN,ROLE_USER" type="radio" name="auth"> admin
+    <input th:field="*{auth}" value="ROLE_USER" checked="checked" type="radio" name="auth"> user <br>
+    <button type="submit">Join</button>
+</form> <br>
+
+</body>
+</html>
